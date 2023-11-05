@@ -11,11 +11,11 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-app.get('/extract', async (req, res) => {
+app.post('/extract', async (req, res) => {
   try {
     const data = req.body;
-    // const pdf_url = data.pdf_url;
-    const pdf_url = "https://firebasestorage.googleapis.com/v0/b/resumecreator-3d8fd.appspot.com/o/resume%2FNipun%20Walia's%20Resume%20(2).pdf?alt=media&token=1c85697f-c2a8-435c-a6e0-74d751d536c5&_gl=1*bvzz67*_ga*NTU3MTI0NzYxLjE2OTYzMjY3MzU.*_ga_CW55HF8NVT*MTY5OTE3NDY2MC4xMS4xLjE2OTkxNzQ2OTEuMjkuMC4w";
+    const pdf_url = data.pdf_url;
+    // const pdf_url = "https://firebasestorage.googleapis.com/v0/b/resumecreator-3d8fd.appspot.com/o/resume%2FNipun%20Walia's%20Resume%20(2).pdf?alt=media&token=1c85697f-c2a8-435c-a6e0-74d751d536c5&_gl=1*bvzz67*_ga*NTU3MTI0NzYxLjE2OTYzMjY3MzU.*_ga_CW55HF8NVT*MTY5OTE3NDY2MC4xMS4xLjE2OTkxNzQ2OTEuMjkuMC4w";
 
     if (!pdf_url) {
       return res.status(400).json({ error: 'PDF URL is missing' });
