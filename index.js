@@ -34,6 +34,9 @@ app.post('/extract', async (req, res) => {
   }
 });
 
+app.get("/", (req,res)=>{
+  res.send("working");
+})
 
 app.post('/return', async (req, res) => {
     try {
