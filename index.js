@@ -2,9 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const extractTextFromPDF = require('./pdf');
 const responsecreate = require('./parse');
-const resume =require("./aicontent")
+const resume =require("./aicontent");
+var cors = require('cors');
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
