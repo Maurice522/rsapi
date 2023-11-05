@@ -1,4 +1,6 @@
-require('dotenv').config()
+// require('dotenv').config()
+
+// process.env.OPENAI_API_KEY
 const OpenAI =require('openai').OpenAI;
 const openai = new OpenAI();
 
@@ -31,9 +33,10 @@ async function responsecreate(pdfText) {
     });
   
     console.log(completion.choices[0].message.content);
+    // console.log(typeof completion.choices[0].message.content);
     var temp = JSON.parse(completion.choices[0].message.content)
     console.log(temp)
-    console.log(temp.objective)
+    console.log(temp.projects)
     return temp;
   }
   
