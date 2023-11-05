@@ -34,6 +34,25 @@ app.post('/extract', async (req, res) => {
   }
 });
 
+app.post('/text', async (req, res) => {
+  try {
+    const data = req.body;
+    const pdf_url = data.pdf_url;
+
+    if (!pdf_url) {
+      return res.status(400).json({ error: 'PDF URL is missing' });
+    }
+
+    const pdfText = await extractTextFromPDF(pdf_url);
+
+    return res.status(200).json(pdfText);
+  
+  } catch (error) {
+    console.error('Error:', error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 app.get("/", (req,res)=>{
   res.send("working");
 })
