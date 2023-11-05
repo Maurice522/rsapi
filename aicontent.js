@@ -20,6 +20,51 @@ async function resume(des,title,details) {
                     Professional Summary, Education, Projects, Experience, Skills and Interests, Achievements (if any)
                     Respond in json format with the extact key value as the section provided to you.
                     Respond only with the generated resume text.
+                    Generate a valid JSON response with the extracted resume text in a similar format
+{
+        jobTitle: '',
+        firstName: '',
+        middleName: '',
+        lastName: '',
+        inputEmail: '',
+        phone: '',
+        dateOfBirth: '',
+        city: '',
+        address: '',
+        postalCode: '',
+        drivingLicense: '',
+        nationality: '',
+        placeOfBirth: '',
+        country: '',
+        professionalSummary: '',
+        uploadedPhotoURL: '',
+        employmentHistory: [
+            {
+                jobTitle: '',
+                employer: '',
+                startDate: '',
+                endDate: '',
+                city: '',
+                description: '',
+            },
+        ],
+        educationHistory: [
+            {
+                school: '',
+                degree: '',
+                startDate: '',
+                endDate: '',
+                city: '',
+                description: '',
+            },
+        ],
+        websitesLinks: [
+            {
+                name: '',
+                url: '',
+            },
+        ],
+    }
                     Note:
         - Generate JSON with section names as keys and text extracted from the resume as values.
         - Provide a single-line JSON response. 
