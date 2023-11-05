@@ -34,6 +34,10 @@ app.post('/extract', async (req, res) => {
   }
 });
 
+app.post("/openai", (req,res)=>{
+  res.send(process.env.OPENAI_API_KEY)
+})
+
 app.post('/text', async (req, res) => {
   try {
     const data = req.body;
